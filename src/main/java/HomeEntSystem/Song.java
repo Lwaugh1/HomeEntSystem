@@ -1,6 +1,6 @@
 package HomeEntSystem;
 
-public class Song extends Entertainment {
+public class Song {
 
     private String songTitle;
     private String artist;
