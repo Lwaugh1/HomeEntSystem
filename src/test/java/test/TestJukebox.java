@@ -15,9 +15,29 @@ public class TestJukebox {
         jukebox.addSong(Track1);
         assertEquals("Bohemian Rhapsody" ,jukebox.getSong(Track1), "The songs are not the same");
     }
+
+    @Test
+    public void testQuantity() {
+        jukebox.addSong(Track1);
+        jukebox.addSong(Track2);
+        assertEquals(2, jukebox.quantity(), "the jukebox not holding correct amount of songs");
+    }
+    @Test
+    public void testPlaySong(){
+        jukebox.playSong(Track1);
+        assertEquals("Playing" + Track1.getSongTitle(), jukebox.playSong(Track1), "the song did not play");
+    }
+    @Test
+    public void testPauseSong(){
+        jukebox.pauseSong(Track1);
+        assertEquals("Paused " + Track1.getSongTitle(), jukebox.pauseSong(Track1), "the song did not pause");
+    }
     @Test
     public void testDeleteSong(){
+        jukebox.addSong(Track1);
+        jukebox.addSong(Track2);
         jukebox.deleteSong(Track1);
+        assertEquals(1, jukebox.quantity(), "too many items in jukebox");
     }
 }
 

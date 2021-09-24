@@ -14,12 +14,15 @@ public class Jukebox {
         jukebox.remove(song);
     }
     public String playSong(Song song){
-        return "Playing " + song.getSongTitle();
+        return "Playing" + song.getSongTitle();
     }
-    public String PauseSong(Song song){
+    public String pauseSong(Song song){
         return "Paused " + song.getSongTitle();
     }
     public String getSong(Song song){
         return song.getSongTitle();
+    }
+    public int quantity(){
+        return jukebox.size();
     }
 }
