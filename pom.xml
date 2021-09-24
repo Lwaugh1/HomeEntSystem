@@ -32,12 +32,5 @@
   <sonar.organization>lwaugh1</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
-
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> e652521305c4a333b2d78d6bfa6f2c9cca548b83
+    
 </project>
