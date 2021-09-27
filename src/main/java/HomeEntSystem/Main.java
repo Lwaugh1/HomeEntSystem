@@ -17,7 +17,10 @@ public class Main {
         jukebox.addSong(Track2);
 
         System.out.println(jukebox.playSong(Track1));
-
+        for(Song s: jukebox.collection()){
+            System.out.print(s.getSongTitle());
+            System.out.println(" - " + s.getArtist());
+        }
     }
 
 

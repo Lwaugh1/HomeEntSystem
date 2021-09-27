@@ -37,7 +37,7 @@ public class TestJukebox {
     @Test
     public void testPlaySong(){
         jukebox.playSong(Track1);
-        assertEquals("Playing" + Track1.getSongTitle(), jukebox.playSong(Track1), "the song did not play");
+        assertEquals("Playing " + Track1.getSongTitle(), jukebox.playSong(Track1), "the song did not play");
     }
     @Test
     public void testPauseSong(){

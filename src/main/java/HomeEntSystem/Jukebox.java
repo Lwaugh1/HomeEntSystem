@@ -14,7 +14,7 @@ public class Jukebox {
         jukebox.remove(song);
     }
     public String playSong(Song song){
-        return "Playing" + song.getSongTitle();
+        return "Playing " + song.getSongTitle();
     }
     public String pauseSong(Song song){
         return "Paused " + song.getSongTitle();
@@ -24,5 +24,8 @@ public class Jukebox {
     }
     public int quantity(){
         return jukebox.size();
+    }
+    public List<Song> collection(){
+        return jukebox;
     }
 }
