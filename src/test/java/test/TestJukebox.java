@@ -20,10 +20,11 @@ public class TestJukebox {
         jukebox.addSong(Track1);
         jukebox.addSong(Track2);
         jukebox.deleteSong(Track1);
-        assertEquals("no", jukebox.getSong(Track1), "Song has not been deletes");
+        assertEquals("no", jukebox.getSong(Track1), "Song has not been deleted");
     }
     @Test
     public void testGetSong(){
+        jukebox.addSong(Track1);
         assertEquals("yes", jukebox.getSong(Track1), "The song was not present in Jukebox");
 
     }

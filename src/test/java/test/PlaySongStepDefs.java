@@ -1,10 +1,11 @@
-package StepDefs;
+package Test;
 
 import com.softwareinstitute.HomeEntSystem.Jukebox;
 import com.softwareinstitute.HomeEntSystem.Song;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -26,13 +27,13 @@ public class PlaySongStepDefs {
         @Then("the song plays")
         public void theSongPlays(){
             jukebox.playSong(Track1);
-            assertEquals("Playing " + Track1.getSongTitle(), jukebox.playSong(Track1), "the song is not playing");
+            Assertions.assertEquals("Playing " + Track1.getSongTitle(), jukebox.playSong(Track1), "the song is not playing");
          }
 
         @Given("song is not available")
         public void songIsNotAvailable() {
             jukebox.deleteSong(Track1);
-            assertEquals("no", jukebox.getSong(Track1), "the song is available");
+            Assertions.assertEquals("no", jukebox.getSong(Track1), "the song is available");
         }
         @When("song is searched")
         public void songIsSearched(){
@@ -42,6 +43,6 @@ public class PlaySongStepDefs {
         @Then("User can add song to jukebox")
         public void userCanAddSongToJukebox() {
             jukebox.addSong(Track2);
-            assertEquals("yes", jukebox.getSong(Track2), "the song has not been added");
+            Assertions.assertEquals("yes", jukebox.getSong(Track2), "the song has not been added");
         }
 }
