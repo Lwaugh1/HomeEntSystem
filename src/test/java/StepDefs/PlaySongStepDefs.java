@@ -10,30 +10,38 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class PlaySongStepDefs {
-        Jukebox jukebox = new Jukebox();
-        Song Track1 = new Song("Bohemian Rhapsody", "Queen", "Rock", 355);
-        Song Track2 = new Song("Heroes", "David Bowie", "Rock", 212);
+        private Jukebox jukebox = new Jukebox();
+        private Song Track1 = new Song("Bohemian Rhapsody", "Queen", "Rock", 355);
+        private Song Track2 = new Song("Heroes", "David Bowie", "Rock", 212);
 
         @Given("song is available")
-        public void songIsAvailable(Song song){
-            jukebox.addSong(song);
-            assertEquals("yes", jukebox.getSong(song), "song is not available");
+        public void songIsAvailable() {
+            jukebox.addSong(Track1);
+        }
+        @When("song is played")
+        public void songIsPlayed() {
+            jukebox.playSong(Track1);
         }
 
         @Then("the song plays")
-        public void theSongPlays(Song song) {
-            assertEquals("Playing " + song.getSongTitle(), jukebox.playSong(song), "The song did not play");
-        }
+        public void theSongPlays(){
+            jukebox.playSong(Track1);
+            assertEquals("Playing " + Track1.getSongTitle(), jukebox.playSong(Track1), "the song is not playing");
+         }
 
         @Given("song is not available")
-        public void songIsNotAvailable(Song song){
-            jukebox.deleteSong(song);
-            assertEquals("no", jukebox.getSong(song), "the song is available");
+        public void songIsNotAvailable() {
+            jukebox.deleteSong(Track1);
+            assertEquals("no", jukebox.getSong(Track1), "the song is available");
+        }
+        @When("song is searched")
+        public void songIsSearched(){
+            jukebox.getSong(Track2);
         }
 
-        @When("User can add song to jukebox")
-        public void userCanAddSongToJukebox(Song song) {
-            jukebox.addSong(song);
-            assertEquals("yes", jukebox.getSong(song), "the song has not been added");
+        @Then("User can add song to jukebox")
+        public void userCanAddSongToJukebox() {
+            jukebox.addSong(Track2);
+            assertEquals("yes", jukebox.getSong(Track2), "the song has not been added");
         }
 }
