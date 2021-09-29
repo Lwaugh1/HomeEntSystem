@@ -1,2 +1,4 @@
+StepDefs\PlaySongStepDefs.class
 Test\TestJukebox.class
 Test\TestSong.class
+StepDefs\runner.class

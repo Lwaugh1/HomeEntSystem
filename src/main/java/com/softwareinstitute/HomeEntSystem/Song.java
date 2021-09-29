@@ -1,4 +1,4 @@
-package HomeEntSystem;
+package com.softwareinstitute.HomeEntSystem;
 
 public class Song {
 
@@ -9,16 +9,15 @@ public class Song {
     private int duration;
     private int releaseYear;
 
-    public Song(String songTitle, String artist, String featuring, String genre, int duration, int releaseYear){
+    public Song(String songTitle, String artist, String featuring, String genre, int duration){
         this.songTitle = songTitle;
         this.artist = artist;
         this.featuring = featuring;
         this.genre = genre;
         this.duration = duration;
-        this.releaseYear = releaseYear;
     }
-    public Song(String songTitle, String artist, String genre, int duration, int releaseYear){
-        this(songTitle, artist, "null", genre, duration, releaseYear);
+    public Song(String songTitle, String artist, String genre, int duration){
+        this(songTitle, artist, "null", genre, duration);
 
     }
 

@@ -1,31 +1,30 @@
 package Test;
-import HomeEntSystem.Jukebox;
-import HomeEntSystem.Song;
+import com.softwareinstitute.HomeEntSystem.Jukebox;
+import com.softwareinstitute.HomeEntSystem.Song;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestJukebox {
-    Song Track1 = new Song("Bohemian Rhapsody", "Queen", "Rock", 355, 1975);
-    Song Track2 = new Song("Heroes", "David Bowie", "Rock", 212, 1977);
+    Song Track1 = new Song("Bohemian Rhapsody", "Queen", "Rock", 355);
+    Song Track2 = new Song("Heroes", "David Bowie", "Rock", 212);
     Jukebox jukebox = new Jukebox();
 
     @Test
     public void testAddSong(){
         jukebox.addSong(Track1);
-        assertEquals("Bohemian Rhapsody" ,jukebox.getSong(Track1), "The songs are not the same");
+        assertEquals("yes" ,jukebox.getSong(Track1), "The songs are not the same");
     }
     @Test
     public void testDeleteSong(){
         jukebox.addSong(Track1);
         jukebox.addSong(Track2);
         jukebox.deleteSong(Track1);
-        assertEquals(1, jukebox.quantity(), "too many items in jukebox");
+        assertEquals("no", jukebox.getSong(Track1), "Song has not been deletes");
     }
     @Test
     public void testGetSong(){
-        jukebox.getSong(Track1);
-        assertEquals("Bohemian Rhapsody", jukebox.getSong(Track1), "The song titles were not the same");
+        assertEquals("yes", jukebox.getSong(Track1), "The song was not present in Jukebox");
 
     }
     @Test

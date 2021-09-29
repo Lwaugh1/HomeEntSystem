@@ -1,4 +1,6 @@
-package HomeEntSystem;
+package com.softwareinstitute.HomeEntSystem;
+
+import org.apache.commons.io.filefilter.TrueFileFilter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +21,13 @@ public class Jukebox {
     public String pauseSong(Song song){
         return "Paused " + song.getSongTitle();
     }
-    public String getSong(Song song){
-        return song.getSongTitle();
+    public String getSong(Song track){
+         if(jukebox.contains(track)){
+           return "yes";
+         }
+         else{
+             return "no";
+         }
     }
     public int quantity(){
         return jukebox.size();

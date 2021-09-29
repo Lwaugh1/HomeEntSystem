@@ -1,12 +1,12 @@
 package Test;
-import HomeEntSystem.Song;
+import com.softwareinstitute.HomeEntSystem.Song;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestSong {
-    Song Track1 = new Song("Bohemian Rhapsody", "Queen", "Rock", 355, 1975);
-    Song Track2 = new Song("Cold Heart", "Elton John", "Dua Lipa","Pop", 202, 2021);
+    Song Track1 = new Song("Bohemian Rhapsody", "Queen", "Rock", 355);
+    Song Track2 = new Song("Cold Heart", "Elton John", "Dua Lipa","Pop", 202);
 
     @Test
     public void testGetSongTitle(){
