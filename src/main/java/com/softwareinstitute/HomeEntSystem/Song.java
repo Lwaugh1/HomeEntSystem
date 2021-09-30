@@ -9,14 +9,15 @@ public class Song {
     private int duration;
     private int releaseYear;
 
-    public Song(String songTitle, String artist, String featuring, String genre, int duration){
+    public Song(String songTitle, String artist, String featuring, String genre, int duration) {
         this.songTitle = songTitle;
         this.artist = artist;
         this.featuring = featuring;
         this.genre = genre;
         this.duration = duration;
     }
-    public Song(String songTitle, String artist, String genre, int duration){
+
+    public Song(String songTitle, String artist, String genre, int duration) {
         this(songTitle, artist, "null", genre, duration);
 
     }
@@ -60,4 +61,16 @@ public class Song {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "\"Title\"= \"" + songTitle +
+                "\", \"Artist\"=\"" +  artist +
+                "\", \"Feat\"=\"" + featuring +
+                "\", \"Genre\"=\"" +  genre +
+                "\", \"duration\"=\"" + duration +
+                "\"}";
+    }
 }
+
