@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Test.TestSong" time="0.003" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Test.SpringbootApplicationTests" time="0.455" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -56,14 +56,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testGetGenre" classname="Test.TestSong" time="0"/>
-  <testcase name="testSetSongTitle" classname="Test.TestSong" time="0"/>
-  <testcase name="testSetDuration" classname="Test.TestSong" time="0"/>
-  <testcase name="testGetDuration" classname="Test.TestSong" time="0"/>
-  <testcase name="testGetFeat" classname="Test.TestSong" time="0"/>
-  <testcase name="testSetArtist" classname="Test.TestSong" time="0"/>
-  <testcase name="testGetArtist" classname="Test.TestSong" time="0"/>
-  <testcase name="testGetSongTitle" classname="Test.TestSong" time="0.001"/>
-  <testcase name="testSetFeat" classname="Test.TestSong" time="0"/>
-  <testcase name="testSetGenre" classname="Test.TestSong" time="0.002"/>
+  <testcase name="Test.SpringbootApplicationTests" classname="Test.SpringbootApplicationTests" time="0.454">
+    <error message="Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+</error>
+    <system-out><![CDATA[16:16:07.517 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:16:07.553 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:16:07.635 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [Test.SpringbootApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:16:07.658 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [Test.SpringbootApplicationTests], using SpringBootContextLoader
+16:16:07.668 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [Test.SpringbootApplicationTests]: class path resource [Test/SpringbootApplicationTests-context.xml] does not exist
+16:16:07.668 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [Test.SpringbootApplicationTests]: class path resource [Test/SpringbootApplicationTestsContext.groovy] does not exist
+16:16:07.668 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [Test.SpringbootApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:16:07.670 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [Test.SpringbootApplicationTests]: SpringbootApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:16:07.754 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [Test.SpringbootApplicationTests]
+]]></system-out>
+  </testcase>
 </testsuite>
