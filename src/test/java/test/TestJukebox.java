@@ -12,29 +12,27 @@ public class TestJukebox {
 
     @Test
     public void testAddSong(){
+        jukebox.addSong(Track1);
         assertEquals("Song Found" ,jukebox.getSong(Track1), "The songs are not the same");
     }
     @Test
     public void testDeleteSong(){
+        jukebox.addSong(Track1);
         jukebox.addSong(Track2);
         jukebox.deleteSong(Track1);
         assertEquals("Song not Found", jukebox.getSong(Track1), "Song has not been deleted");
     }
     @Test
     public void testGetSong(){
-        assertEquals("yes", jukebox.getSong(Track1), "The song was not present in Jukebox");
+        jukebox.addSong(Track1);
+        assertEquals("Song Found", jukebox.getSong(Track1), "The song was not present in Jukebox");
     }
     @Test
     public void testPlaySong(){
+        jukebox.addSong(Track1);
         jukebox.playSong(Track1);
         assertEquals("Playing " + Track1.getSongTitle(), jukebox.playSong(Track1), "the song did not play");
     }
-    @Test
-    public void testPauseSong(){
-        jukebox.pauseSong(Track1);
-        assertEquals("Paused " + Track1.getSongTitle(), jukebox.pauseSong(Track1), "the song did not pause");
-    }
-
 }
 
 

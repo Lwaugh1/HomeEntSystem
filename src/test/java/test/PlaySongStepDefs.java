@@ -34,7 +34,7 @@ public class PlaySongStepDefs {
         @Given("song is not available")
         public void songIsNotAvailable() {
             jukebox.deleteSong(Track1);
-            Assertions.assertEquals("no", jukebox.getSong(Track1), "the song is available");
+            Assertions.assertEquals("Song not Found", jukebox.getSong(Track1), "the song is available");
         }
         @When("song is searched")
         public void songIsSearched(){
@@ -44,6 +44,6 @@ public class PlaySongStepDefs {
         @Then("User can add song to jukebox")
         public void userCanAddSongToJukebox() {
             jukebox.addSong(Track2);
-            Assertions.assertEquals("yes", jukebox.getSong(Track2), "the song has not been added");
+            Assertions.assertEquals("Song Found", jukebox.getSong(Track2), "the song has not been added");
         }
 }

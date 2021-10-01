@@ -1,5 +1,4 @@
 Test\PlaySongStepDefs.class
 Test\TestJukebox.class
 Test\TestSong.class
-Test\SpringbootApplicationTests.class
-Test\RunnerTest.class
+Test\runnerTest.class

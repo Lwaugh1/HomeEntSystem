@@ -8,5 +8,5 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources", glue = "Test")
 
-class RunnerTest {
+public class runnerTest {
 }
