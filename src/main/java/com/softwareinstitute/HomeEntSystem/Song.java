@@ -1,5 +1,7 @@
 package com.softwareinstitute.HomeEntSystem;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Song {
 
     private String songTitle;
@@ -7,19 +9,20 @@ public class Song {
     private String featuring;
     private String genre;
     private int duration;
-    private int releaseYear;
 
-    public Song(String songTitle, String artist, String featuring, String genre, int duration) {
+    public Song(String songTitle,
+                String artist,
+                String featuring,
+                String genre,
+                int duration) {
         this.songTitle = songTitle;
         this.artist = artist;
         this.featuring = featuring;
         this.genre = genre;
         this.duration = duration;
     }
-
     public Song(String songTitle, String artist, String genre, int duration) {
         this(songTitle, artist, "null", genre, duration);
-
     }
 
     public String getSongTitle() {

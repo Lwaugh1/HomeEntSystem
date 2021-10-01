@@ -13,7 +13,6 @@ public class Main {
         Song Track1 = new Song("Bohemian Rhapsody", "Queen", "Rock", 355);
         Song Track2 = new Song("Heroes", "David Bowie", "Rock", 212);
         Jukebox jukebox = new Jukebox();
-        jukebox.addSong(Track1); jukebox.addSong(Track2);
 
         System.out.println("Welcome to Jukebox Entertainment System!");
         System.out.println("Choose from the following options:");

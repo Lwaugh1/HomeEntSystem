@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Jukebox {
     private Jukebox jukebox;
@@ -33,19 +34,23 @@ public class Jukebox {
     }
 
     public String getSong(Song song){
-         if(this.collection.contains(song)){
-           return "Song Found";
-         }
-         else{
-             return "Song not Found";
-         }
+        if(this.collection.contains(song)){
+            return "Song Found";
+        }
+        else{
+            return "Song not Found";
+        }
     }
 
-    public List<Song> collection(){
+    public List<Song> collection() {
         return this.collection;
     }
+
+        public Optional<Song> selectSongsByTitle(String songTitle){
+            return this.collection.stream().filter(song -> song.getSongTitle().equals(songTitle)).findFirst();
+    }
     public String toString(){
-        String json = new Gson().toJson(jukebox);
-                return json;
+        String json = new Gson().toJson(collection);
+        return json;
     }
 }

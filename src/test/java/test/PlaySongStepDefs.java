@@ -11,9 +11,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class PlaySongStepDefs {
-        private Jukebox jukebox = new Jukebox();
+
         private Song Track1 = new Song("Bohemian Rhapsody", "Queen", "Rock", 355);
         private Song Track2 = new Song("Heroes", "David Bowie", "Rock", 212);
+        private Jukebox jukebox = new Jukebox();
 
         @Given("song is available")
         public void songIsAvailable() {
