@@ -3,7 +3,6 @@ package com.softwareinstitute.HomeEntSystem;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
-
 @SpringBootApplication
 @RestController
 public class SpringbootApplication {
@@ -16,13 +15,7 @@ public class SpringbootApplication {
 	Jukebox jukebox = new Jukebox();
 
 	@CrossOrigin("http://localhost:3000")
-	@PostMapping("/addSong")
-	public String addSong(String songTitle, String songArtist, String songFeat, String songGenre, int songDur) {
-		Song song = new Song(songTitle, songArtist, songFeat, songGenre, songDur);
-		jukebox.addSong(song);
-		return song.toString();
-	}
-	@GetMapping("/contents")
+	@RequestMapping(value="/contents", method=RequestMethod.GET)
 	public String contents() {
 		if (jukebox.collection().isEmpty()) {
 			jukebox.addSong(Track1);
@@ -32,7 +25,15 @@ public class SpringbootApplication {
 			return jukebox.collection().toString();
 		}
 	}
+	@CrossOrigin("http://localhost:3000")
+	@PostMapping("/addSong")
+	public String addSong(String songTitle, String songArtist, String songFeat, String songGenre, int songDur) {
+		Song song = new Song(songTitle, songArtist, songFeat, songGenre, songDur);
+		jukebox.addSong(song);
+		return song.toString();
+	}
 
+	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/titleSearch")
 	public String songTitleSearch(String songTitle) {
 		if(jukebox.collection().isEmpty()) {

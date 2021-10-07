@@ -72,7 +72,7 @@ public class Song {
                 "\", \"Artist\"=\"" +  artist +
                 "\", \"Feat\"=\"" + featuring +
                 "\", \"Genre\"=\"" +  genre +
-                "\", \"duration\"=\"" + duration +
+                "\", \"Duration\"=\"" + duration +
                 "\"}";
     }
 }
