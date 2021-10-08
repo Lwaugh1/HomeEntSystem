@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Jukebox.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HomeEntSystem</a> &gt; <a href="index.source.html" class="el_package">com.softwareinstitute.HomeEntSystem</a> &gt; <span class="el_source">Jukebox.java</span></div><h1>Jukebox.java</h1><pre class="source lang-java linenums">package com.softwareinstitute.HomeEntSystem;
+
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+<span class="fc" id="L9">public class Jukebox {</span>
+    private Jukebox jukebox;
+<span class="fc" id="L11">    private List&lt;Song&gt; collection = new ArrayList&lt;Song&gt;();</span>
+
+    public void addSong(Song song) {
+<span class="fc" id="L14">        this.collection.add(song);</span>
+<span class="fc" id="L15">    }</span>
+    public void deleteSong(Song song){
+<span class="fc" id="L17">        this.collection.remove(song);</span>
+<span class="fc" id="L18">    }</span>
+    public String playSong(Song song){
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        if(this.collection.contains(song)){</span>
+<span class="fc" id="L21">            return &quot;Playing &quot; + song.getSongTitle();</span>
+        }
+        else{
+<span class="nc" id="L24">            return &quot;Song not Found&quot;;</span>
+        }
+    }
+    public String pauseSong(Song song) {
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (this.jukebox.playSong(song) == &quot;Playing &quot; + song.getSongTitle()) {</span>
+<span class="nc" id="L29">            return &quot;Paused &quot; + song.getSongTitle();</span>
+        }
+        else {
+<span class="nc" id="L32">            return &quot;Song not Playing&quot;;</span>
+        }
+    }
+
+    public String getSong(Song song){
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if(this.collection.contains(song)){</span>
+<span class="fc" id="L38">            return &quot;Song Found&quot;;</span>
+        }
+        else{
+<span class="fc" id="L41">            return &quot;Song not Found&quot;;</span>
+        }
+    }
+
+    public List&lt;Song&gt; collection() {
+<span class="nc" id="L46">        return this.collection;</span>
+    }
+
+        public Optional&lt;Song&gt; selectSongsByTitle(String songTitle){
+<span class="nc" id="L50">            return this.collection.stream().filter(song -&gt; song.getSongTitle().equals(songTitle)).findFirst();</span>
+    }
+    public String toString(){
+<span class="nc" id="L53">        String json = new Gson().toJson(collection);</span>
+<span class="nc" id="L54">        return json;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

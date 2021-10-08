@@ -68,11 +68,11 @@ public class Song {
     @Override
     public String toString() {
         return "{" +
-                "\"Title\"= \"" + songTitle +
-                "\", \"Artist\"=\"" +  artist +
-                "\", \"Feat\"=\"" + featuring +
-                "\", \"Genre\"=\"" +  genre +
-                "\", \"Duration\"=\"" + duration +
+                "\"Title\": \"" + songTitle +
+                "\", \"Artist\":\"" +  artist +
+                "\", \"Feat\":\"" + featuring +
+                "\", \"Genre\":\"" +  genre +
+                "\", \"Duration\":\"" + duration +
                 "\"}";
     }
 }
