@@ -1,5 +1,7 @@
-package com.softwareinstitute.HomeEntSystem;
+package com.softwareinstitute.HomeEntSystem.Springboot;
 
+import com.softwareinstitute.HomeEntSystem.Jukebox;
+import com.softwareinstitute.HomeEntSystem.Song;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
