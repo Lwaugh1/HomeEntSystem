@@ -25,7 +25,7 @@ public class Jukebox {
         }
     }
     public String pauseSong(Song song) {
-        if (this.jukebox.playSong(song) == "Playing " + song.getSongTitle()) {
+        if (this.jukebox.playSong(song).equals("Playing " + song.getSongTitle())) {
             return "Paused " + song.getSongTitle();
         }
         else {
